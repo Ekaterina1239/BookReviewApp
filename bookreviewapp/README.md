@@ -31,9 +31,6 @@ passport / passport-local User authentication (login, password)
 ## Package Purpose
 nodemon Automatically restarts the server when code changes (for development)
 
-## Links 
-GitHub repository: https://github.com/00019170/bookreviewapp
-
 Deployed site: http://localhost:3000/books/5f741ccd-1dc7-4457-9201-1abcd566369f
 # Project Documentation
 ## Root Files
