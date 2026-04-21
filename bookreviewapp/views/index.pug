@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service
+  h2 Book List
+  if books.length
+    ul
+      each book in books
+        li
+          a(href=`/books/${book.id}`) #{book.title} — #{book.author} (#{book.year})
+          form(action=`/books/${book.id}/delete`, method="POST", style="display:inline")
+            button(type="submit") Delete
+  else
+    p No books available yet.

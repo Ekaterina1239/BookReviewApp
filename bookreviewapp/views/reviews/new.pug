@@ -1,0 +1,12 @@
+extends ../layout
+include ../mixins/review-form
+
+block content
+  h1= title
+  
+  if book
+    +reviewForm({}, book.id)
+    a.btn.btn-secondary(href=`/books/${book.id}`) Cancel
+  else
+    p.text-danger Book not found
+    a.btn.btn-secondary(href="/books") Back to Books

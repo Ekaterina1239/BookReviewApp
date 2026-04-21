@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  form(method="POST", action=book ? `/books/${book.id}` : '/books')
+    label(for="title") Title:
+    input(type="text", id="title", name="title", value=book ? book.title : '', required)
+    
+    label(for="author") Author:
+    input(type="text", id="author", name="author", value=book ? book.author : '', required)
+    
+    label(for="genre") Genre:
+    input(type="text", id="genre", name="genre", value=book ? book.genre : '', required)
+    
+    label(for="description") Description:
+    textarea(id="description", name="description")= book ? book.description : ''
+    
+    button(type="submit")= book ? 'Update Book' : 'Add Book'

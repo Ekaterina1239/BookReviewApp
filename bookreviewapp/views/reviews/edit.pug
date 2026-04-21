@@ -1,0 +1,14 @@
+extends ../layout
+include ../mixins/review-form
+
+block content
+  h1= title
+  
+  if book && review
+    form(method="POST" action=`/books/${book.id}/reviews/${review.id}?_method=PUT`)
+      +reviewForm(review, book.id)
+      button.btn.btn-primary(type="submit") Update Review
+    a.btn.btn-secondary(href=`/books/${book.id}`) Cancel
+  else
+    p.text-danger Book or review not found
+    a.btn.btn-secondary(href="/books") Back to Books

@@ -1,0 +1,46 @@
+mixin reviewForm(review = {}, bookId)
+  form(method="POST" action=`/books/${bookId}/reviews${review.id ? `/${review.id}?_method=PUT` : ''}`)
+    .form-group
+      label(for="title") Title:
+      input.form-control(
+        type="text" 
+        name="title" 
+        required
+        minlength="3"
+        value=review.title
+      )
+
+    .form-group
+      label(for="genre") Genre:
+      select.form-control(name="genre" required)
+        option(value="") -- Select Genre --
+        each genre in ['Fantasy', 'Mystery', 'Romance', 'Science', 'Biography']
+          option(
+            value=genre
+            selected=(review.genre === genre)
+          )= genre
+
+    .form-group
+      label Rating:
+      .rating
+        - for (let i = 5; i >= 1; i--)
+          input(
+            type="radio" 
+            id=`star${i}` 
+            name="rating" 
+            value=i
+            required
+            checked=(review.rating === i)
+          )
+          label(for=`star${i}`) ★
+
+    .form-group
+      label(for="content") Review:
+      textarea.form-control(
+        name="content" 
+        rows="5" 
+        required
+        minlength="10"
+      )= review.content
+
+    button.btn.btn-primary(type="submit") Submit

@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+  }
+  
+  .reviews-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .reviews-list li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  .review-detail {
+    padding: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  form {
+    margin-top: 1rem;
+  }
+  
+  label, input, textarea, button {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
